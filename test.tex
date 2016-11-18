@@ -1,0 +1,46 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[german,ngerman]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{scrpage2}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{fancyhdr} %Paket laden
+\usepackage{layout}    %  um die Seitenränder als Bild auszugeben
+\usepackage{geometry}
+
+\geometry{
+   left=3cm,
+   textwidth=15cm,
+   marginpar=3cm}
+
+\layout
+\pagestyle{fancy}
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[C]{Titel} %Kopfzeile links
+\fancyfoot[C]{\thepage} %Seitennummer
+
+
+\definecolor{grund}{gray}{.9}           % grauer Box-Hintergrund
+
+\begin{document}
+\author{Norbert Damke \verb+damke@gmx.de}
+\title{Mein erstes \LaTeX-Dokument}
+\date{18. Mai 1999}
+\maketitle
+\section*{Erstes Kapitel}
+\subsection*{Unterkapitel 1}
+
+Hier beginnt nun unser erstes wunderbares LaTeX-Dokument,
+das die grundlegenden Eingaben zeigen soll \dots
+\lstinputlisting[language=PHP,backgroundcolor=\color{grund}]{test.php}
+\fbox{\includegraphics[frame=single,width=1\textwidth]{testalt.pdf}} %70% der Textbreiteter
+Dies steht unter dem Bild
+\begin{align*}
+  \sqrt{x^4} &= x^2\\
+  \lim_{n\to\infty} \frac 1{n^2} &= 0 \\
+  \int_{-1}^2 x\, \mathrm{d}x &= \left[ \frac12 x^2 \right]_1^2
+\end{align*}
+
+\end{document}
